@@ -5,11 +5,18 @@ const chirpStore = require('../chirpstore');
 
 let router = express.Router();
 
-router.get("/",(req,res)=>{
-    res.send('chirp res');
+router.get("/:id?", (req, res) => {
+    let id = req.params.id;
+    if (id) {
+        res.json(chirpStore.GetChirp(id));
+        res.send('chirps if echo, id =' + id);
+    } else {
+        res.send(chirpStore.GetChirps());
+        // res.send('api/chirps else echo has no id');
+    }
 });
 // Working so far
-router.post('/',(req,res)=>{
+router.post('/', (req, res) => {
     chirpStore.CreateChirp(req.body);
     res.sendStatus(200);
 });

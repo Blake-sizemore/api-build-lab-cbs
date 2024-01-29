@@ -3,11 +3,6 @@ const fs = require('fs');
 let chirps = { nextid: 0 };
 // ID key for the eventual array full of objects that will be chirps
 
-let writeChirps = () => {
-    fs.writeFileSync('chirps.json', JSON.stringify(chirps));
-}
-// function that edits the file in question
-
 if (fs.existsSync('chirps.json')) {
     chirps = JSON.parse(fs.readFileSync('chirps.json'));
 }
@@ -18,7 +13,7 @@ let getChirps = () => {
     return Object.assign({}, chirps);
 }
 
-let getChirp = () => {
+let getChirp = id => {
     return Object.assign({}, chirps[id]);
 }
 
@@ -37,6 +32,10 @@ let deleteChirp = id => {
     writeChirps();
 }
 
+let writeChirps = () => {
+    fs.writeFileSync('chirps.json', JSON.stringify(chirps));
+}
+// function that edits the file in question
 
 module.exports = {
     GetChirps: getChirps,

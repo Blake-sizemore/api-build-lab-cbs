@@ -11,7 +11,7 @@ app.use(cors());
 // This Enable All CORS Requests) 
 app.use(express.json());
 // It parses incoming requests with JSON payloads and is based on body-parser
-app.use('/',apiRouter);
+app.use('/api',apiRouter);
 // allows for access beyond /api if in the routes folder
 app.listen(3000);
 // Listen to the host/"Client"
