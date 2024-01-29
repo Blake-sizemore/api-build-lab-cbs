@@ -1,0 +1,25 @@
+{
+  "name": "building-api-lab",
+  "version": "1.0.0",
+  "description": "\"API lab build\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blake-sizemore/api-build-lab-cbs.git"
+  },
+  "author": "Blake Sizemore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Blake-sizemore/api-build-lab-cbs/issues"
+  },
+  "homepage": "https://github.com/Blake-sizemore/api-build-lab-cbs#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "react": "^18.2.0",
+    "uuid": "^9.0.1"
+  }
+}
