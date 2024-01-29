@@ -8,7 +8,7 @@ let router = express.Router();
 router.get("/",(req,res)=>{
     res.send('chirp res');
 });
-
+// Working so far
 router.post('/',(req,res)=>{
     chirpStore.CreateChirp(req.body);
     res.sendStatus(200);
