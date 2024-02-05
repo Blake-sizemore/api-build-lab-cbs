@@ -3,14 +3,21 @@ const express = require('express');
 // aka require = import/from 
 const cors = require('cors')
 // pulls in cors - Cross-origin resource sharing (CORS) is a mechanism for integrating applications. CORS defines a way for client web applications that are loaded in one domain to interact with resources in a different domain.
+    // Different server and resources locations
+    // 
 const apiRouter = require('./routes');
 // This sets "routes" into access
+// by defualt searches for index.js as the controller
+const morgan = require('morgan');
+
 let app = express();
 
+app.use(express.static("client"));
 app.use(cors());
 // This Enable All CORS Requests) 
 app.use(express.json());
 // It parses incoming requests with JSON payloads and is based on body-parser
+    
 app.use('/api',apiRouter);
 // allows for access beyond /api if in the routes folder
 app.listen(3000);
